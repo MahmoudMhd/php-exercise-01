@@ -1,0 +1,42 @@
+- Created html;
+- Split grid into 2 halfs;
+- created registration form;
+- created login form;
+- created php method post for registration form;
+- test out post button cases;
+- recieved registration form into php variables {
+    $username = $_POST['username'];
+}
+- created condition for registraion form inputs validation {
+    if (in_array($username, $db_users)) {}
+}
+- created error array {
+    $error = [];
+}
+- inserted all validation invalids into error array {
+    if (in_array($username, $db_users)) {
+        $error['username-invalid'] = "username already taken";
+    }
+}
+- echo error array under each input {
+    <input type="text" name="username">
+    <?=@$error['username_invalid'] ?>
+}
+- save input value in input fields {
+    <input type="text" name="username" value="<?=@username ?>">
+}
+- tested out case login;
+- recieved form input fields into variables {
+    $username1 = $_POST['username'];
+}
+- condition on login if username and password in database and username and password have same index;
+- if username or password is invalid save in error array {
+    if(valid) {
+
+    } else {
+        $error['login_invalid'] = "wrong username or password";
+    }
+}
+- echo error array under username and password input fields;
+- save input value in input fields;
+- on login change header location to safe.php;
